@@ -30,6 +30,9 @@ export default function Hero() {
           </Link>
         </Button>
       </div>
+      <div>
+        <Button className="bg-blend-difference font-bold p-2 text-sm hover:bg-green-600"><Link href={"https://aurorawiki.vercel.app/docs/getting-started/installation/"}>I want to install</Link></Button>
+      </div>
     </div>
   );
 }
