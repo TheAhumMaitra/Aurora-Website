@@ -89,6 +89,14 @@ export const themes: Theme[] = [
     previewImageUrl:
      "https://raw.githubusercontent.com/TheAhumMaitra/Osaka-Jade-For-Aurora/refs/heads/master/preview.png",
   },
+  {
+    id: "0011",
+    name: "Kanagawa Dragon",
+    repoUrl: "https://github.com/TheAhumMaitra/Kanagawa-Dragon-For-Aurora",
+    status: "external",
+    previewImageUrl:
+     "https://raw.githubusercontent.com/TheAhumMaitra/Kanagawa-Dragon-For-Aurora/refs/heads/master/preview.png",
+  },
 ];
 
 export function getThemeSlug(name: string) {
