@@ -12,6 +12,7 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "Themes", href: "/themes" },
   { name: "Wiki", href: "https://aurorawiki.vercel.app/" },
+  { name: "Posts", href: "/posts" }
 ];
 function MobileNavbar() {
   const pathname = usePathname();
