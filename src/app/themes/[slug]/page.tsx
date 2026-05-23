@@ -3,25 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { CopyButton } from "@/components/animate-ui/components/buttons/copy";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  getThemeBySlug,
-  getThemeSlug,
-  themes,
-} from "@/data/themes";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Kbd } from "@/components/ui/kbd";
+import { getThemeBySlug, getThemeSlug, themes } from "@/data/themes";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 export function generateStaticParams() {
   return themes.map((theme) => ({ slug: getThemeSlug(theme.name) }));
@@ -59,6 +47,11 @@ export default async function ThemeDetailsPage({
     notFound();
   }
 
+  const isExternalTheme = theme.status === "external";
+  const installationCommand = isExternalTheme
+    ? `aurora download-theme ${theme.repoUrl}`
+    : null;
+
   return (
     <main className="flex-1 px-4 py-10">
       <section className="mx-auto flex w-full max-w-6xl flex-col gap-8">
@@ -70,6 +63,7 @@ export default async function ThemeDetailsPage({
             >
               Back To Themes
             </Link>
+
             <div className="flex flex-wrap items-center gap-3">
               <h1 className="font-heading text-4xl font-black uppercase">
                 {theme.name}
@@ -82,7 +76,11 @@ export default async function ThemeDetailsPage({
             </div>
           </div>
 
-          <Button asChild variant="outline" className="uppercase bg-background p-3 rounded-2xl">
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-2xl bg-background p-3 uppercase"
+          >
             <a href={theme.repoUrl} target="_blank" rel="noreferrer">
               Visit repository
             </a>
@@ -123,6 +121,13 @@ export default async function ThemeDetailsPage({
           </Card>
         </div>
       </section>
+
+      {installationCommand && (
+        <section className="mt-6 flex flex-wrap items-center justify-center">
+          <Kbd className="p-5 text-sm">{installationCommand}</Kbd>
+          <CopyButton content={installationCommand} />
+        </section>
+      )}
     </main>
   );
 }

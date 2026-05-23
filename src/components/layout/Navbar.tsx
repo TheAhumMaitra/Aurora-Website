@@ -60,7 +60,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "text-foreground hover:bg-primary hover:rounded-2xl hover:p-1  transition delay-150 duration-200 ease-in-out hover:-translate-y-0.5 ",
-                isActive && "text-primary font-bold border-3 p-1 rounded-2xl",
+                isActive && "hover:bg-accent text-primary font-bold border-3 p-1 rounded-2xl",
               )}
             >
               {link.name}
