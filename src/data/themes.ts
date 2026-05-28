@@ -97,6 +97,14 @@ export const themes: Theme[] = [
     previewImageUrl:
      "https://raw.githubusercontent.com/TheAhumMaitra/Kanagawa-Dragon-For-Aurora/refs/heads/master/preview.png",
   },
+  {
+    id: "0012",
+    name: "Everblush",
+    repoUrl: "https://github.com/TheAhumMaitra/Everblush-For-Aurora",
+    status: "external",
+    previewImageUrl:
+     "https://raw.githubusercontent.com/TheAhumMaitra/Everblush-For-Aurora/refs/heads/master/preview.png",
+  }
 ];
 
 export function getThemeSlug(name: string) {
