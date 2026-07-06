@@ -1,10 +1,17 @@
 export default function Preview() {
   return (
-    <div className="w-full h-full mt-4 flex flex-col gap-3 items-center justify-center">
-        <h1 className="font-bold underline text-xl">Preview</h1>
-      <video width="70%" height="200" autoPlay loop muted>
+    <div className="w-full mt-4 flex flex-col items-center gap-3">
+      <h1 className="text-xl font-bold underline">Preview</h1>
+
+      <video
+        className="w-full max-w-4xl rounded-lg shadow-lg"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
         <source src="/preview.mp4" type="video/mp4" />
-        Your browser does not support to play this video!
+        Your browser does not support this video.
       </video>
     </div>
   );
