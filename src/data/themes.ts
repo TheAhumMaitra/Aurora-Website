@@ -104,7 +104,16 @@ export const themes: Theme[] = [
     status: "external",
     previewImageUrl:
      "https://raw.githubusercontent.com/TheAhumMaitra/Everblush-For-Aurora/refs/heads/master/preview.png",
-  }
+  },
+  {
+    id: "0013",
+    name: "Vanta Black",
+    repoUrl: "https://github.com/TheAhumMaitra/Vanta-Black-For-Aurora",
+    status: "external",
+    previewImageUrl:
+     "https://raw.githubusercontent.com/TheAhumMaitra/Vanta-Black-For-Aurora/refs/heads/master/preview.png",
+  },
+
 ];
 
 export function getThemeSlug(name: string) {
