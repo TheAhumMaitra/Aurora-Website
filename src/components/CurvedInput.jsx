@@ -129,38 +129,39 @@ const bentLinePath = (g, u0, u1, v) => `M ${fmt(g, u0, v)} ${edgeSeg(g, u1, v, t
 
 const SELECTABLE_TYPES = ['text', 'search', 'tel', 'url', 'password'];
 
-const CurvedInput = ({
-  value,
-  defaultValue = '',
-  onChange,
-  onSubmit,
-  placeholder = 'Enter your email',
-  buttonText = 'Get Started',
-  type = 'email',
-  name,
-  ariaLabel,
-  theme = 'dark',
-  width = 450,
-  bend = 28,
-  height = 64,
-  cornerRadius = 18,
-  borderWidth = 1.5,
-  fontSize = 16,
-  backgroundColor,
-  textColor,
-  placeholderColor,
-  borderColor,
-  buttonColor,
-  buttonTextColor,
-  iconColor,
-  shadowSize = 'md',
-  shadowColor,
-  showButton = true,
-  showIcon = true,
-  icon,
-  className = '',
-  style
-}) => {
+const CurvedInput = props => {
+  const {
+    value = '',
+    defaultValue = '',
+    onChange = () => {},
+    onSubmit = () => {},
+    placeholder = 'Enter your email',
+    buttonText = 'Get Started',
+    type = 'email',
+    name,
+    ariaLabel,
+    theme = 'dark',
+    width = 450,
+    bend = 28,
+    height = 64,
+    cornerRadius = 18,
+    borderWidth = 1.5,
+    fontSize = 16,
+    backgroundColor,
+    textColor,
+    placeholderColor,
+    borderColor,
+    buttonColor,
+    buttonTextColor,
+    iconColor,
+    shadowSize = 'md',
+    shadowColor,
+    showButton = true,
+    showIcon = true,
+    icon,
+    className = '',
+    style = {}
+  } = props;
   const uid = useId().replace(/:/g, '');
   const layoutPathId = `ci-text-${uid}`;
   const buttonPathId = `ci-btn-${uid}`;
